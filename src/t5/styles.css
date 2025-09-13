@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.image {
+    transition: scale 0.5s;
+}
+
+.image:hover {
+    scale: 1.5;
+}
+
+.image:hover + .image {
+    scale: 1.25;
+}
+
+.image:hover + .image + .image {
+    scale: 1.1;
+}
+
+.image:has(+ .image:hover) {
+    scale: 1.25;
+}
+
+.image:has(+ * + .image:hover) {
+    scale: 1.1;
+}
